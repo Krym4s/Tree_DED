@@ -197,7 +197,7 @@ TreeError QuestionUser (TreeMember* current) {
             QuestionUser (current->rightChild);
 
         else {
-            txSpeak ("\vAs I though! That's why everyone calls me genious AI!\n");
+            txSpeak ("\vAs I thought! That's why everyone calls me genious AI!\n");
         }
     } else if (answ == 'n') {
         if (current->leftChild)
@@ -289,7 +289,7 @@ TreeError MemberData(Tree* tree)
     Stack* pointers;
     pointers = newStack();
     stackConstructor (pointers, 10);
-    pushIntoStack (pointers, "kostyl'");
+    //pushIntoStack (pointers, "kostyl'");
 
     if (FindElem (tree->root, pointers, name) == NO_TREE_ERRORS)
     {
@@ -343,6 +343,11 @@ TreeError PrintQualities (Stack* pointers, TreeMember* currentVertex)
         previousName = currentName;
         currentName = popFromStack (pointers);
     }
+    if (currentVertex->leftChild->memberValue == currentName)
+        txSpeak ("\vnot ");
+    txSpeak ("\v%s, ", previousName);
+
+    return NO_TREE_ERRORS;
 }
 
 TreeError MemberComparator (Tree* tree)
@@ -354,7 +359,7 @@ TreeError MemberComparator (Tree* tree)
     Stack* firstPointers;
     firstPointers = newStack();
     stackConstructor (firstPointers, 10);
-    pushIntoStack (firstPointers, "kostyl1");
+    //pushIntoStack (firstPointers, "kostyl1");
 
     txSpeak ("\vEnter name of second character\n");
     char* secondName = (char*) calloc (20, sizeof(*secondName));
@@ -363,7 +368,7 @@ TreeError MemberComparator (Tree* tree)
     Stack* secondPointers;
     secondPointers = newStack();
     stackConstructor (secondPointers, 10);
-    pushIntoStack (secondPointers, "kostyl2");
+    //pushIntoStack (secondPointers, "kostyl2");
 
     if (FindElem (tree->root, firstPointers, firstName) || FindElem (tree->root, secondPointers, secondName))
     {

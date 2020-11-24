@@ -28,7 +28,9 @@ digraph LIST{
 "having infinity initiation resources" -> "Ivan"[label="no"];
 "having infinity initiation resources" -> "Mark"[label="yes"];
 "having a specific kind of arm hook" -> "Dolgodvorov Egor"[label="yes"];
-"sometimes sleep" -> "not a phystech"[label="yes"];
+"sometimes sleep" -> "speaking while sleeping"[label="yes"];
+"speaking while sleeping" -> "not a phystech"[label="no"];
+"speaking while sleeping" -> "Fedya"[label="yes"];
 "animal" -> "associated with FOPF"[label="yes"];
 "associated with FOPF" -> "associated with RT! RT! RT!"[label="no"];
 "associated with RT! RT! RT!" -> "associated with BM"[label="no"];
